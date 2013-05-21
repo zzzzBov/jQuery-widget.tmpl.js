@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Widget Template</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+<body>
+    <h1>jQuery Widget Template</h1>
+    <form action="../jqwt/jquery-widget.tmpl.js" id="widget-generator">
+<pre><label>jQuery-<input type="text" name="widget-name" id="widget-name" placeholder="Widget Name" />.js</label>
+<label>By: <input type="text" name="widget-author" id="widget-author" placeholder="Widget Author" /></label></pre>
+    <table>
+    	<caption>Methods</caption>
+    	<tbody>
+            <tr>
+            	<td>
+                    <input type="checkbox" name="widget-method-_setOption" id="widget-method-_setOption" class="widget-method" value=",
+        _setOption: function (name, value) {
+            //custom mutator code here
+            this._options[name] = value;
+        }" />
+                </td>
+            	<td>
+                    <label for="widget-method-_setOption">
+                        <code>_setOption</code>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+            	<td>
+                    <input type="checkbox" name="widget-method-_getOption" id="widget-method-_getOption" class="widget-method" value=",
+        _getOption: function (name) {
+            //custom accessor code here
+            return this._options[name];
+        }" />
+                </td>
+            	<td>
+                    <label for="widget-method-_getOption">
+                        <code>_getOption</code>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+            	<td>
+                    <input type="checkbox" name="widget-method-option" id="widget-method-option" class="widget-method" value=",
+        option: function (name, value) {
+            switch (arguments.length) {
+            case 0:
+                throw new Error('&quot;option&quot; must be called with at least one parameter.');
+            case 1:
+                return this._getOption(name);
+            default:
+                this._setOption(name, value);
+            }
+        }" data-requires="#widget-method-_setOption, #widget-method-_getOption" />
+                </td>
+            	<td>
+                    <label for="widget-method-option">
+                        <code>option</code>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="widget-method-options" id="widget-method-options" class="widget-method" value=",
+        options: function (map) {
+            var i;
+            if (!arguments.length) {
+                throw new Error('&quot;options&quot; must be called with at least one parameter.');
+            }
+            map = Object(map);
+            for (i in map) {
+                this._setOption(i, map[i]);
+            }
+        }" data-requires="#widget-method-_setOption" />
+                </td>
+                <td>
+                    <label for="widget-method-options">
+                        <code>options</code>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <label>
+        <input type="checkbox" name="widget-copyright" id="widget-copyright" value="&#10; * Copyright (c) zzzzBov 2012" />
+        <span>Add Copyright</span>
+    </label>
+    <br>
+    <input type="submit" value="Generate" />
+    </form>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/String.prototype.tmpl.js"></script>
+    <script type="text/javascript" src="assets/js/String.prototype.jsEscape.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>

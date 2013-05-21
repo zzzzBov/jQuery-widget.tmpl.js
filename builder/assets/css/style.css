@@ -1,0 +1,43 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    padding: 20px 50px;
+}
+
+input[type="text"] {
+    border: 0 none;
+    border-bottom: 1px solid #F0F0F0;
+    font-family: "Courier New", monospace;
+    font-size: 1em;
+    line-height: 150%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+caption {
+    background-color: #DDD;
+    padding: 3px 7px;
+}
+
+tr:nth-child(even) {
+    background-color: #F0F0F0;
+}
+
+th,
+td {
+    padding: 3px 7px;
+}
