@@ -72,4 +72,4 @@
     $.expr[':'][widget] = function (ele) {
   	    return $(ele).data(widget) instanceof $[widget];
     };
-}(jQuery, '<%=safeWidgetName%>'));
+}(jQuery, <%=safeWidgetName%>));

@@ -27,7 +27,7 @@ $('#widget-generator').submit(function (e) {
             jqwt;
         data = {
             widgetName: $('#widget-name').val(),
-            safeWidgetName: $('#widget-name').val().jsEscape(),
+            safeWidgetName: JSON.stringify($('#widget-name').val()),
             widgetAuthor: $('#widget-author').val(),
             methods: '',
             copyright: $('#widget-copyright:checked').val() || ''
