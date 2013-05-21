@@ -6,6 +6,8 @@ body {
 }
 
 body {
+    background: linear-gradient(45deg, #FFF 0%, #FFF 25%, #F0F0F0 25%, #F0F0F0 50%, #FFF 50%, #FFF 75%, #F0F0F0 75%, #F0F0F0 100%);
+    background-size: 200px 200px;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 150%;
@@ -13,10 +15,14 @@ body {
 
 #page {
     background-color: #FFF;
-    border: 1px solid #F0F0F0;
-    margin: 0 auto;
+    border: 1px solid #DDD;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 100px auto;
+    max-width: 100%;
+    min-width: 320px;
     padding: 20px 50px;
-    width: 400px;
+    width: 502px;
 }
 
 label {
