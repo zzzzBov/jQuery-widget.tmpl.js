@@ -24,13 +24,20 @@ $('#widget-generator').submit(function (e) {
     e.preventDefault();
     $.get($(this).attr('action'), {t: Math.random()}, function (template) {
         var data,
-            jqwt;
+            jqwt,
+            filter;
         data = {
             widgetName: $('#widget-name').val(),
             safeWidgetName: JSON.stringify($('#widget-name').val()),
             widgetAuthor: $('#widget-author').val(),
             methods: '',
+            filter: '',
             copyright: $('#widget-copyright:checked').val() || ''
+        }
+        
+        filter = $('#widget-filter').val();
+        if (filter) {
+            data.filter = '.filter(' + JSON.stringify(filter) + ')';
         }
         
         $('.widget-method').each(function () {

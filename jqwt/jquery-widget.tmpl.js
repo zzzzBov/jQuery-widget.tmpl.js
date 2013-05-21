@@ -32,7 +32,7 @@
         var args,
             ret;
         args = arguments;
-  	    this.each(function (i, ele) {
+        this<%=filter%>.each(function (i, ele) {
             var $this,
                 wgt,
                 fn,
@@ -70,6 +70,6 @@
         return ret;
     };
     $.expr[':'][widget] = function (ele) {
-  	    return $(ele).data(widget) instanceof $[widget];
+        return $(ele).data(widget) instanceof $[widget];
     };
 }(jQuery, <%=safeWidgetName%>));
